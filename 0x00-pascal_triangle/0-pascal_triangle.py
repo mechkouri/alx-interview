@@ -14,6 +14,3 @@ def pascal_triangle(n):
 
     return triangle
 
-if __name__ == "__main__":
-    from 0-main import print_triangle
-    print_triangle(pascal_triangle(5))
