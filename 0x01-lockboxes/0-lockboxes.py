@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-"""
-Module for the canUnlockAll function.
-"""
-
+"""Module that determines if all boxes can be opened"""
 
 def canUnlockAll(boxes):
     """
@@ -16,8 +13,8 @@ def canUnlockAll(boxes):
     bool: True if all boxes can be opened, False otherwise.
     """
     n = len(boxes)
-    unlocked = set([0])  # The first box is already unlocked
-    keys = set(boxes[0])  # Keys from the first box
+    unlocked = set([0])
+    keys = set(boxes[0])
 
     while keys:
         new_key = keys.pop()
@@ -26,14 +23,3 @@ def canUnlockAll(boxes):
             keys.update(boxes[new_key])
     
     return len(unlocked) == n
-
-
-if __name__ == "__main__":
-    boxes = [[1], [2], [3], [4], []]
-    print(canUnlockAll(boxes))
-
-    boxes = [[1, 4, 6], [2], [0, 4, 1], [5, 6, 2], [3], [4, 1], [6]]
-    print(canUnlockAll(boxes))
-
-    boxes = [[1, 4], [2], [0, 4, 1], [3], [], [4, 1], [5, 6]]
-    print(canUnlockAll(boxes))
